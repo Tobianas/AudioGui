@@ -29,20 +29,24 @@ public class AudioLogic {
     public void Play() {
         clip1.start();
     }
+
     public void Pause() {
         clip1.stop();
     }
+
     public void Stop() {
         clip1.setMicrosecondPosition(0);
         clip1.stop();
     }
-    public void SetVolume(int volume){
+
+    public void SetVolume(int volume) {
         //Ovládanie hlasitosti je nelineárne
         float Gain = volume * -1;
         gainControl1.setValue(Gain);
     }
+
     public void SetTime(int value) {
-        clip1.setMicrosecondPosition(clip1.getMicrosecondLength()/100*value);
+        clip1.setMicrosecondPosition(clip1.getMicrosecondLength() / 100 * value);
     }
 
     //Toto malo byť na Update pozícii slidera podľa toho, kde sa Pieseň nachádza... nevedel som to spraviť lebo vždy keď
